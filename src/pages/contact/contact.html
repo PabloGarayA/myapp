@@ -7,11 +7,43 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+  <ion-card>
+  <img src={{me.img}}/>
+  <ion-card-content>
+    <ion-card-title>
+      {{me.nick_name}}
+      </ion-card-title>
+    <p>
+      {{me.bio}}  
+    </p>
     <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-      @ionicframework
+      <ion-icon name= "logo-twitter" style="color:blue"></ion-icon>
+      {{me.twitter}}
     </ion-item>
-  </ion-list>
+    <ion-item>
+      <ion-icon name= "logo-book" style="color:blue"></ion-icon>
+      {{me.medium}}
+    </ion-item>
+    <ion-item>
+      <ion-icon name= "logo-github" style="color:blue"></ion-icon>
+      {{me.github}}
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>
+
+ <ion-list>
+    <ion-row>
+  <ion-item *ngFor= "let item of notifications">
+    <ion-thumbnail item-start>
+      <img src="{{item.img}}">
+    </ion-thumbnail>
+    <h2>{{item.nickname}}</h2>
+    <p>{{item.text}}</p>
+    <button ion-button clear item-end>View</button>
+  </ion-item>
+    </ion-row>
+</ion-list>
+
+
 </ion-content>
